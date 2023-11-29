@@ -149,7 +149,6 @@ setup(
     author='Nagyeong Choi',
     author_email='choi2019@pukyong.ac.kr',
     description='QPlayer Wrapper for Python',
-    long_description="",
     ext_modules=[CMakeExtension("qplayer_wrapper")],
     cmdclass={"build_ext": CMakeBuild},
     zip_safe=False,
