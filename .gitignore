@@ -91,3 +91,6 @@ ENV/
 
 #Qplayer
 Qplayer
+
+#pybind11
+pybind11
