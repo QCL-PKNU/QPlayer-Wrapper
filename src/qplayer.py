@@ -11,8 +11,11 @@
 #######################################################################
 import qplayer_wra
 
-def RunQPlayer(self, output_path:str = None, analyze_path:str = None, run:int = None):
-    # qasm = self.compile('qasm')
-    output_path = 
-    analyze_path = 
-    qasm_path = 
+## Call to mainlike() API
+def RunQPlayer(self, run:int = None):
+    output_path = "../QPlayer/release/bin/examples/test.qasm"
+    input_path = "./simulation.res"
+    json_path = "./task.json"
+    qplayer_wra.set_value(output_path,input_path,json_path)
+    # test = "-i examples/test.qasm -o ./log/simulation.res"
+    # qasm_path = 
