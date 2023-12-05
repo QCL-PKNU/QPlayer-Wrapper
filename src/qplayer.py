@@ -11,9 +11,8 @@
 #######################################################################
 import qplayer_wra
 
-def RunQPlayer(self, output_path:str = None, analyze_path:str = None, run:int = None){
+def RunQPlayer(self, output_path:str = None, analyze_path:str = None, run:int = None):
     # qasm = self.compile('qasm')
     output_path = 
     analyze_path = 
     qasm_path = 
-}
