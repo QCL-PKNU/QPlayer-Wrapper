@@ -90,7 +90,7 @@ ENV/
 .ropeproject
 
 #Qplayer
-Qplayer/
+QPlayer/
 
 #pybind11
 pybind11/
