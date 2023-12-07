@@ -11,11 +11,19 @@
 #######################################################################
 import qplayer_wra
 
-## Call to mainlike() API
-def RunQPlayer(self, run:int = None):
-    output_path = "../QPlayer/release/bin/examples/test.qasm"
-    input_path = "./simulation.res"
-    json_path = "./task.json"
-    qplayer_wra.set_value(output_path,input_path,json_path)
-    # test = "-i examples/test.qasm -o ./log/simulation.res"
-    # qasm_path = 
+def RunQPlayer(run:int = None):
+    return "hi"
+    try:
+        output_path = "../QPlayer/release/bin/examples/test.qasm"
+        input_path = "./simulation.res"
+        json_path = "./task.json"
+        qplayer_wra.set_value(output_path,input_path,json_path)
+    # qplayer_wra._convertQASM()
+    # qplayer_wra._runQASM()
+    # # test = "-i examples/test.qasm -o ./log/simulation.res"
+    # # qasm_path = 
+    except Exception as ex:
+        print(ex)
+
+#호출 예시
+RunQPlayer()

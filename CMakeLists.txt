@@ -24,6 +24,7 @@ set(QPLAYER_SOURCES
     QPlayer/core/src/dump.cpp
     QPlayer/core/src/experimental.cpp
     QPlayer/core/src/state.cpp
+    # QPlayer/qasm/qelib1.inc
 )
 pybind11_add_module(qplayer_wra ${QPLAYER_SOURCES})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/QPlayer/qasm

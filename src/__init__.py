@@ -1,1 +1,2 @@
-from .core import hmm
+# from .core import hmm
+from .qplayer import RunQPlayer

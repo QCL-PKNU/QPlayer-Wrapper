@@ -14,8 +14,9 @@
 #include <fcntl.h>
 #include <signal.h>
 #include <libgen.h>
-#include <typeinfo>
+
 #include "QASMparser.h"
+// #include "/home/nagyeong/qplayer_wrapper/QPlayer/qasm/qelib1.inc"
 
 #define MAX_LENG 512
 
@@ -24,6 +25,7 @@ static char f_in[MAX_LENG];
 static char f_out[MAX_LENG];
 static char j_out[MAX_LENG];
 static int shots;
+static int is_verbose = 0;
 static int is_json = 0;
 static char *version = "QPlayer v-1.0-Leopard";
 static char *dirc = NULL;
@@ -199,6 +201,7 @@ void _showStat(struct qregister_stat *stat)
 }
 
 void set_value(char _f_in[], char _f_out[], char _j_out[]){
+    // to be merged with convertQASM,runQASM
     // strcpy(f_in,"../QPlayer/release/bin/examples/test.qasm");
     // strcpy(f_out,"./simulation.res");
 
@@ -209,13 +212,13 @@ void set_value(char _f_in[], char _f_out[], char _j_out[]){
     is_json = 1;
 }
 
-void _convertQASM(){
+void _convertQASM(void){
     FILE *in = NULL;
 	FILE *out = NULL;
 
 	in = fopen(f_in, "rt");
 	out = fopen(f_qasm, "wt");
-
+    
 	while(!feof(in)) {
 		char line[1024] = "";
 
@@ -278,6 +281,10 @@ void _runQASM(void){
 
 	/* STEP4: show simulation stat or generate json */
 	struct qregister_stat stat = parser->getQRegStat();
+    
+    if(is_verbose) {
+        _showStat(&stat);
+    }
 
 	if(is_json) {
 		_genStatJson(&stat);
