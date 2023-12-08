@@ -14,7 +14,6 @@ void set_value(char _f_in[], char _f_out[], char _j_out[]){
 
     is_json = 1;
 }
-
 void _convertQASM(void){
     FILE *in = NULL;
 	FILE *out = NULL;
@@ -29,9 +28,9 @@ void _convertQASM(void){
     char line[1024] = "";
     char tmp[] = "include \"qelib1.inc\";\n";
     char fath_qelib[1024];
+
+    // Combination of qelib1.inc file paths
     snprintf(fath_qelib, sizeof(fath_qelib), "include \"%s/qplayer_wrapper/QPlayer/qasm/qelib1.inc\";", homeDir);
-    
-	cout << "\"" <<homeDir << "\"" << "// [] " << fath_qelib << endl;
     
 	while(!feof(in)) {
 		fgets(line, sizeof(line), in);
@@ -47,12 +46,17 @@ void _convertQASM(void){
 	fclose(in);
 	fclose(out);
 }
-
+void main_wra(char _f_in[], char _f_out[], char _j_out[]){
+    set_value(_f_in,_f_out,_j_out);
+    _convertQASM();
+    runQASM();
+}
 namespace py = pybind11;
 
 PYBIND11_MODULE(qplayer_wra, m) {
-    m.def("set_value",&set_value,"");
-    m.def("_convertQASM",&_convertQASM,"");
-    m.def("runQASM",&runQASM,"");
-    m.def("genStatJson",&genStatJson,"",py::arg("*stat"));
+    // m.def("set_value",&set_value,"");
+    // m.def("convertQASM",&_convertQASM,"");
+    // m.def("runQASM",&runQASM,"");
+    // m.def("genStatJson",&genStatJson,"",py::arg("*stat"));
+    m.def("main_wra",&main_wra,"");
 }
