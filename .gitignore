@@ -94,3 +94,6 @@ QPlayer/
 
 #pybind11
 pybind11/
+
+#backup
+src/core copy.cpp
