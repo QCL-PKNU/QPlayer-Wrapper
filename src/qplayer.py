@@ -13,12 +13,13 @@ import tempfile
 import os
 import qplayer_wra
 
-file_name = 'QuantumCircuit'
 current_dir = os.getcwd()
 
-def RunQPlayer(qasm_code:str = None, run:int = 1):
+def RunQPlayer(qasm_code:str = None, run:int = 1, file_name:str = 'QuantumCircuit'):
     try: 
-        if(qasm_code is None):return
+        if(qasm_code is None):
+            return
+        
         file_path = mk_qasm_file(qasm_code)
         # test_input_path = "../QPlayer/release/bin/examples/test.qasm"
         output_path = f"{current_dir}/{file_name}.res"
@@ -26,6 +27,11 @@ def RunQPlayer(qasm_code:str = None, run:int = 1):
         shots = run
 
         qplayer_wra.main_wra(file_path,output_path,json_path,shots)
+
+        with open(json_path, 'r') as json_file:
+            json_data = json.load(json_file)
+
+        print(json.dumps(json_data, indent=2))
 
     except Exception as ex:
         print(ex)
@@ -39,5 +45,14 @@ def mk_qasm_file(_qasm_code):
 
     return qasm_file_path
 
-#호출 예시
-RunQPlayer()
+
+import atexit
+
+@atexit.register
+def cleanup_temp_dir():
+    temp_dir = os.path.join(current_dir, 'tmp_QuantumCircuit')
+    if os.path.isdir(temp_dir):
+        for file in os.listdir(temp_dir):
+            file_path = os.path.join(temp_dir, file)
+            os.unlink(file_path)
+        os.rmdir(temp_dir)
