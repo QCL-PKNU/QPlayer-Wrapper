@@ -9,4 +9,4 @@ qc.measure(1,1)
 
 qasm = qc.qasm()
 
-print(type(qasm))
+result = RunQPlayer(qasm, run=1080)
