@@ -1,2 +1,3 @@
-qiskit==0.32
+scikit-build
+qiskit
 qiskit-aer

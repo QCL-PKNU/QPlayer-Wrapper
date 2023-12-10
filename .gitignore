@@ -97,3 +97,5 @@ pybind11/
 
 #backup
 src/core copy.cpp
+*.json
+*.res

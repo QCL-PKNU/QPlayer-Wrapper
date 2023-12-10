@@ -7,10 +7,11 @@
 
 const char* homeDir = getenv("HOME");
 
-void set_value(char _f_in[], char _f_out[], char _j_out[]){
+void set_value(char _f_in[], char _f_out[], char _j_out[], int _shots){
     strcpy(f_in,_f_in);
     strcpy(f_out,_f_out);
     strcpy(j_out,_j_out);
+    shots = int(_shots);
 
     is_json = 1;
 }
@@ -46,8 +47,8 @@ void _convertQASM(void){
 	fclose(in);
 	fclose(out);
 }
-void main_wra(char _f_in[], char _f_out[], char _j_out[]){
-    set_value(_f_in,_f_out,_j_out);
+void main_wra(char _f_in[], char _f_out[], char _j_out[], int _soths){
+    set_value(_f_in,_f_out,_j_out,_soths);
     _convertQASM();
     runQASM();
 }

@@ -155,6 +155,8 @@ setup(
     extras_require={"test": ["pytest>=6.0"]},
     python_requires=">=3.7",
     license=license,
-    packages=find_packages(exclude=('tests', 'docs'))
+    packages=find_packages(exclude=('tests', 'docs')),
+    # install_requires=["qiskit", "pywebview==3.3.3", "qiskit-aer"],
+    include_package_data=True
 )
 
