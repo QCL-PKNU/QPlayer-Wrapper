@@ -32,6 +32,7 @@ pip install .
 ```
 
 ## Usage
+### Test code (main.py)
 ```python
 from qiskit import *
 from src import RunQPlayer
@@ -48,6 +49,7 @@ qasm = qc.qasm()
 result = RunQPlayer(qasm, run=1080)
 print(result)
 ```
+### Result
 ```bach
 {
   "circuit": {
