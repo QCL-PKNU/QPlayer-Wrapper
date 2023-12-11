@@ -12,7 +12,9 @@ Follow the instructions below to set up your environment for using the QPlayer W
 ### Clone QPlayer Repository
 ```bach
 git clone https://github.com/eQuantumOS/QPlayer.git
+```
 
 ### Clone pybind11 Repository
 ```bach
 git clone https://github.com/pybind/pybind11.git
+```
