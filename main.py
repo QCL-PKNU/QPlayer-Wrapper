@@ -11,3 +11,4 @@ qc.measure(1,1)
 qasm = qc.qasm()
 
 result = RunQPlayer(qasm, run=1080)
+print(result)

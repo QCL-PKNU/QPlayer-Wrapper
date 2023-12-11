@@ -48,6 +48,18 @@ void _convertQASM(void){
 	fclose(in);
 	fclose(out);
 }
+
+/**
+ * @brief Wrapper function for main QPlayer operations.
+ *
+ * This function calls _set_value, _convertQASM, and runQASM(in main.cpp) functions.
+ * It catches exceptions and sets a Python runtime error if an exception occurs.
+ *
+ * @param _f_in Input QASM file path.
+ * @param _f_out Output result file path.
+ * @param _j_out Output JSON file path.
+ * @param _shots Number of shots for QPlayer.
+ */
 void main_wra(char _f_in[], char _f_out[], char _j_out[], int _soths){
     try {
         _set_value(_f_in,_f_out,_j_out,_soths);
