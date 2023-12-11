@@ -1,3 +1,0 @@
-scikit-build
-qiskit
-qiskit-aer
