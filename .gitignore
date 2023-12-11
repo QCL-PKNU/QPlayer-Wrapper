@@ -96,6 +96,6 @@ QPlayer/
 pybind11/
 
 #backup
-*copy.cpp
+*copy.*
 *.json
 *.res
