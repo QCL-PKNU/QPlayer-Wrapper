@@ -49,5 +49,72 @@ result = RunQPlayer(qasm, run=1080)
 print(result)
 ```
 ```bach
-
+{
+  "circuit": {
+    "used qubits": 2,
+    "used gates": 5,
+    "gate calls": {
+      "U3": 2,
+      "H": 1,
+      "RX": 1,
+      "CX": 1,
+      "MEASURE": 3
+    }
+  },
+  "runtime": {
+    "total simulation time": 22053,
+    "individual gate time": {
+      "U3": [
+        208,
+        105,
+        103,
+        104
+      ],
+      "H": [
+        8114,
+        8114,
+        8114,
+        8114
+      ],
+      "RX": [
+        60,
+        60,
+        60,
+        60
+      ],
+      "CX": [
+        7092,
+        7092,
+        7092,
+        7092
+      ],
+      "MEASURE": [
+        6579,
+        6462,
+        0,
+        2193
+      ]
+    }
+  },
+  "simulation jobs": {
+    "max states": 4,
+    "final states": 1,
+    "used memory": "114.5 MB"
+  },
+  "system": {
+    "OS": {
+      "name": "Ubuntu",
+      "version": "22.04.3 LTS (Jammy Jellyfish)"
+    },
+    "CPU": {
+      "model": "Intel(R) Xeon(R) Silver 4214R CPU @ 2.40GHz",
+      "cores": 48,
+      "herz": "3052.007"
+    },
+    "Memory": {
+      "total": "251.5 GB",
+      "avail": "239.5 GB"
+    }
+  }
+}
 ```
