@@ -22,6 +22,9 @@ with open('README.rst') as f:
 with open('LICENSE') as f:
     license = f.read()
 
+with open('requirements.txt') as f:
+    requirements = f.read().splitlines()
+
 ## for pybind11
 #start
 
@@ -157,6 +160,7 @@ setup(
     license=license,
     packages=find_packages(exclude=('tests', 'docs')),
     # install_requires=["qiskit", "pywebview==3.3.3", "qiskit-aer"],
+    install_requires=requirements,
     include_package_data=True
 )
 
