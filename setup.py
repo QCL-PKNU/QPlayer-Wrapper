@@ -159,7 +159,6 @@ setup(
     python_requires=">=3.7",
     license=license,
     packages=find_packages(exclude=('tests', 'docs')),
-    # install_requires=["qiskit", "pywebview==3.3.3", "qiskit-aer"],
     install_requires=requirements,
     include_package_data=True
 )

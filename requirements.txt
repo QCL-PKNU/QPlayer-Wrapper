@@ -1,0 +1,4 @@
+setuptools
+scikit-build
+qiskit
+qiskit-aer

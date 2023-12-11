@@ -7,7 +7,7 @@
 
 const char* homeDir = getenv("HOME");
 
-void set_value(char _f_in[], char _f_out[], char _j_out[], int _shots){
+void _set_value(char _f_in[], char _f_out[], char _j_out[], int _shots){
     strcpy(f_in,_f_in);
     strcpy(f_out,_f_out);
     strcpy(j_out,_j_out);
@@ -15,6 +15,7 @@ void set_value(char _f_in[], char _f_out[], char _j_out[], int _shots){
 
     is_json = 1;
 }
+
 void _convertQASM(void){
     FILE *in = NULL;
 	FILE *out = NULL;
@@ -48,16 +49,17 @@ void _convertQASM(void){
 	fclose(out);
 }
 void main_wra(char _f_in[], char _f_out[], char _j_out[], int _soths){
-    set_value(_f_in,_f_out,_j_out,_soths);
-    _convertQASM();
-    runQASM();
+    try {
+        _set_value(_f_in,_f_out,_j_out,_soths);
+        _convertQASM();
+        runQASM();
+    } catch (const std::exception& e) {
+        PyErr_SetString(PyExc_RuntimeError, e.what());
+    }
 }
 namespace py = pybind11;
 
 PYBIND11_MODULE(qplayer_wra, m) {
-    // m.def("set_value",&set_value,"");
-    // m.def("convertQASM",&_convertQASM,"");
-    // m.def("runQASM",&runQASM,"");
-    // m.def("genStatJson",&genStatJson,"",py::arg("*stat"));
-    m.def("main_wra",&main_wra,"");
+    m.def("main_wra", &main_wra, "Description of main_wra function",
+      py::arg("_f_in"), py::arg("_f_out"), py::arg("_j_out"), py::arg("_soths"));
 }
