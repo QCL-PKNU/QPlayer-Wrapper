@@ -30,3 +30,5 @@ clone_repo:
 	if [ ! -d "QPlayer" ]; then \
 		git clone https://github.com/eQuantumOS/QPlayer.git; \
 	fi
+
+	#  check if there is pybind11 folder if not clone it
