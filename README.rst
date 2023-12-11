@@ -1,11 +1,9 @@
-Sample Module Repository
+QPlayer Wrapper
 ========================
 
-This simple project is an example repo for Python projects.
-
-`Learn more <http://www.kennethreitz.org/essays/repository-structure-and-python>`_.
+This is a wrapper that makes the ETRI-provided QPlayer available in the Python environment.
+The README describes how to set up your environment to use the QPlayer Wrapper.
 
 ---------------
-
-If you want to learn more about ``setup.py`` files, check out `this repository <https://github.com/kennethreitz/setup.py>`_.
-
+``git clone https://github.com/eQuantumOS/QPlayer.git``
+``git clone https://github.com/pybind/pybind11.git``
