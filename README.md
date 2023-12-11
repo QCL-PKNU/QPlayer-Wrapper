@@ -8,6 +8,14 @@ The README describes how to set up your environment to use the QPlayer Wrapper.
 
 Follow the instructions below to set up your environment for using the QPlayer Wrapper
 
+### Clone QPlayer Wrapper
+```bach
+git clone https://github.com/Sengthai/qplayer_wrapper.git
+```
+```bach
+cd qplayer_wrapper
+```
+
 ### Clone QPlayer Repository
 ```bach
 git clone https://github.com/eQuantumOS/QPlayer.git
@@ -20,7 +28,7 @@ git clone https://github.com/pybind/pybind11.git
 
 ### Install qplayer_wrapper
 ```bach
-cd qplayer_wrapper
+python3 -m venv .venv; source .venv/bin/activate
 pip install .
 ```
 
