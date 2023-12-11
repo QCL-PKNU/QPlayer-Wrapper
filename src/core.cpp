@@ -1,11 +1,10 @@
 #include <pybind11/pybind11.h>
 #include <filesystem>
+#include <unistd.h>
 #include <cstdlib>
 
 #include "QASMparser.h"
 #include "main.cpp"
-
-const char* homeDir = getenv("HOME");
 
 void _set_value(char _f_in[], char _f_out[], char _j_out[], int _shots){
     strcpy(f_in,_f_in);
@@ -23,16 +22,21 @@ void _convertQASM(void){
 	in = fopen(f_in, "rt");
 	out = fopen(f_qasm, "wt");
 
-    if (homeDir == nullptr) {
-        std::cout << "Missing Home path" << std::endl;
-    }
+    // if (homeDir == nullptr) {
+    //     std::cout << "Missing Home path" << std::endl;
+    // }
 
     char line[1024] = "";
     char tmp[] = "include \"qelib1.inc\";\n";
     char fath_qelib[1024];
 
     // Combination of qelib1.inc file paths
-    snprintf(fath_qelib, sizeof(fath_qelib), "include \"%s/qplayer_wrapper/QPlayer/qasm/qelib1.inc\";", homeDir);
+    std::filesystem::path executablePath = __FILE__;
+    executablePath = executablePath.parent_path();
+    std::string parentDirectory = executablePath.parent_path().parent_path().string();
+
+    cout << parentDirectory << ";" << endl;
+    snprintf(fath_qelib, sizeof(fath_qelib), "include \"%s/qplayer_wrapper/QPlayer/qasm/qelib1.inc\";", parentDirectory.c_str());
     
 	while(!feof(in)) {
 		fgets(line, sizeof(line), in);
