@@ -35,7 +35,6 @@ void _convertQASM(void){
     executablePath = executablePath.parent_path();
     std::string parentDirectory = executablePath.parent_path().parent_path().string();
 
-    cout << parentDirectory << ";" << endl;
     snprintf(fath_qelib, sizeof(fath_qelib), "include \"%s/qplayer_wrapper/QPlayer/qasm/qelib1.inc\";", parentDirectory.c_str());
     
 	while(!feof(in)) {
