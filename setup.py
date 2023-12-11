@@ -22,7 +22,7 @@ with open('README.md') as f:
 with open('LICENSE') as f:
     license = f.read()
 
-with open('requirements.txt') as f:
+with open('requirements.txt', 'r') as f:
     requirements = f.read().splitlines()
 
 ## for pybind11
