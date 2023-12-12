@@ -304,7 +304,10 @@ string executeQASM(string qasm, int shots=1080){
 	QASMparser* parser = NULL;
 
     // Replace qelib1.inc path
-    string qelib_path = string(homeDir) + "/qplayer_wrapper/QPlayer/qasm/qelib1.inc";
+    std::filesystem::path executablePath = __FILE__;    
+    executablePath = executablePath.parent_path();
+    std::string parentDirectory = executablePath.parent_path().parent_path().string();
+    string qelib_path = string(parentDirectory) + "/qplayer_wrapper/QPlayer/qasm/qelib1.inc";
     replaceSubstring(qasm, "qelib1.inc", qelib_path);
 
     string path = saveStringToTempFile(qasm);    
