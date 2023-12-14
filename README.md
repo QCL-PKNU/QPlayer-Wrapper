@@ -40,6 +40,13 @@ make
 ```
 
 ## Usage
+
+### Run main.py
+
+```bash
+python main.py
+```
+
 ### Test code (main.py)
 ```python
 from qiskit import QuantumCircuit
