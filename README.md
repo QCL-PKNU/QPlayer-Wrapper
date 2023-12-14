@@ -14,6 +14,11 @@ QPlayer Wrapper is a Python interface that facilitates the utilization of the ET
 - gcc and g++ capable of C++11 standard
 - make 3.x or higher
 
+## Pre-installation
+```bach
+sudo apt-get update && sudo apt-get install build-essential
+```
+
 ## Setup
 
 Follow the instructions below to set up your environment for using the QPlayer Wrapper.
