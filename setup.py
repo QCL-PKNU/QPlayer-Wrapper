@@ -146,7 +146,7 @@ class CMakeBuild(build_ext):
 
 
 setup(
-    name='qplayer_wrapper',
+    name='qplayer',
     version='0.1',
     long_description=readme,
     author='Nagyeong Choi',

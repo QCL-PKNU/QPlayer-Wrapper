@@ -1,6 +1,6 @@
-from qiskit import *
-from src import RunQPlayer
-from qplayer_wra import *
+from qiskit import QuantumCircuit
+from qiskit.visualization import plot_histogram
+from qplayer import executeQASM
 
 qc = QuantumCircuit(2)
 qc.h(0)
@@ -12,5 +12,6 @@ qc.measure_all()
 qasm = qc.qasm()
 
 result = executeQASM(qasm, 1080)
-# result = RunQPlayer(qasm, 1080)
-print(result)
+
+figure = plot_histogram(result.get_counts())
+figure.savefig('result.png')

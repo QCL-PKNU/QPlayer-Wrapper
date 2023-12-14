@@ -11,7 +11,7 @@ add_subdirectory(pybind11)
 # add_executable(TokenInitializer src/TokenInitializer.cpp QPlayer/qasm/src/QASMtoken.cpp)
 # target_link_libraries(TokenInitializer PRIVATE QASMtoken)
 set(QPLAYER_SOURCES
-    src/core.cpp
+    qplayer/core.cpp
     QPlayer/qasm/src/QASMparser.cpp
     QPlayer/qasm/src/QASMscanner.cpp
     QPlayer/qasm/src/QASMtoken.cpp

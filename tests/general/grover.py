@@ -1,5 +1,5 @@
 from qiskit import *
-from src import RunQPlayer
+from qplayer import RunQPlayer
 
 def grover():
     qc = QuantumCircuit(5, 5)

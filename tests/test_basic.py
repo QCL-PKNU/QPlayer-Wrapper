@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from .context import src
+from .context import qplayer
 
 import unittest
 
