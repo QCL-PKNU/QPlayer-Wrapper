@@ -9,14 +9,20 @@ INNER_INCLUDE = -IQPlayer/qasm
 INNER_LIBRARY = -LQPlayer/release/lib -libqplayer.a
 
 # 빌드 명령어
-all: outerProject
+all: install_build
 
-outerProject: $(SOURCE)
-    $(CXX) -o $@ $^ $(INNER_INCLUDE) $(INNER_LIBRARY)
-	pip install .
+install_build:
+	if [ ! -d "build" ]; then \
+		mkdir build; \
+	fi
+	cd build; \
+	cmake ..; \
+	make; \
+	cd ..; \
+	pip install .; \
 
 clean:
-    rm -f outerProject
+	rm -rf *.o
 
 init:
 	pip install -r requirements.txt
@@ -32,3 +38,6 @@ clone_repo:
 	fi
 
 	#  check if there is pybind11 folder if not clone it
+	if [ ! -d "pybind11" ]; then \
+		git clone https://github.com/pybind/pybind11.git; \
+	fi
