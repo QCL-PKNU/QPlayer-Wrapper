@@ -28,8 +28,6 @@ git clone https://github.com/pybind/pybind11.git
 
 ### Install qplayer_wrapper
 ```bach
-python3 -m venv .venv; source .venv/bin/activate
-python setup.py install
 pip install .
 ```
 

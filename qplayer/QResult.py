@@ -47,6 +47,7 @@ class SimulationJobs:
         self.final_states = final_states
         self.used_memory = used_memory
 
+
 @dataclass
 class MeasurementDetail:
     percentage: int
@@ -57,7 +58,6 @@ class MeasurementDetail:
         self.percentage = percentage
         self.count = count
         self.state = state
-
 
 
 @dataclass
@@ -90,7 +90,6 @@ class OS:
     def __init__(self, name, version):
         self.name = name
         self.version = version
-
 
 
 @dataclass
