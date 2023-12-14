@@ -30,7 +30,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/QPlayer/qasm
                     ${CMAKE_CURRENT_SOURCE_DIR}/QPlayer/core/include
 )
 # Add the following line to disable the warning about converting string literals to char*
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-write-strings")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-write-strings -lstdc++fs -std=c++17")
 
 # target_include_directories(qplayer_wra PRIVATE
 #     /pybind11/include/pybind11  # pybind11 헤더 파일이 있는 경로

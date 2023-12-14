@@ -2,3 +2,4 @@ setuptools
 scikit-build
 qiskit
 matplotlib
+pybind11
