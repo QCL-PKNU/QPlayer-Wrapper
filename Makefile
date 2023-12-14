@@ -13,7 +13,7 @@ all: outerProject
 
 outerProject: $(SOURCE)
     $(CXX) -o $@ $^ $(INNER_INCLUDE) $(INNER_LIBRARY)
-	pip install -e .
+	pip install .
 
 clean:
     rm -f outerProject
