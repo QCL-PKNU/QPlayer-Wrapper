@@ -1,3 +1,5 @@
+[![Build and Test](https://github.com/QCL-PKNU/QPlayer-Wrapper/actions/workflows/python-app.yml/badge.svg)](https://github.com/QCL-PKNU/QPlayer-Wrapper/actions/workflows/python-app.yml)
+
 # QPlayer Wrapper
 
 QPlayer Wrapper is a Python interface that facilitates the utilization of the ETRI-provided QPlayer within a Python environment. This README provides a step-by-step guide on how to set up your environment to seamlessly integrate and use the QPlayer Wrapper.
