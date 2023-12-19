@@ -10,3 +10,21 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
+
+import unittest
+
+
+class InstallTest(unittest.TestCase):
+
+    def test_install_qplayer_cpp(self):
+        from qplayer_wra import executeQASM
+        # check if we can from qplayer_wra import executeQASM
+        # Assert that the install was successful.
+        self.assertTrue(executeQASM)
+        
+    def test_install_wrapper(self):
+        from qplayer import executeQASM
+        # check if we can from qplayer import executeQASM
+        # Assert that the install was successful.
+        self.assertTrue(executeQASM)
+

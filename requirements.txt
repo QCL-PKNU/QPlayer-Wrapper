@@ -3,3 +3,5 @@ scikit-build
 qiskit
 matplotlib
 pybind11
+cmake
+virtualenv

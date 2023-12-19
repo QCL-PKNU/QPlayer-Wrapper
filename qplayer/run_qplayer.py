@@ -15,19 +15,19 @@ import qplayer_wra
 import json
 from .QResult import QResult
 
-def executeQASM(qasm_code:str = None, run:int = 1080):
+def executeQASM(qasm_code:str = None, shots:int = 1080):
     """
     Executes the given QASM code using the qplayer_wra module.
 
     Args:
         qasm_code (str): The QASM code to be executed.
-        run (int): The run number.
+        shots (int): The run number.
 
     Returns:
         QResult: The result of the QASM execution.
     """
 
-    result = qplayer_wra.executeQASM(qasm_code, run)
+    result = qplayer_wra.executeQASM(qasm_code, shots)
     result = json.loads(result)
 
     try:

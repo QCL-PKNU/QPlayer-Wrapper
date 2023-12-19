@@ -13,13 +13,12 @@ QPlayer Wrapper is a Python interface that facilitates the utilization of the ET
 
 - gcc and g++ capable of C++11 standard
 - make 3.x or higher
+- pip 23.x or higher
+- pybind11 2.x or higher
+- scikit-build 0.17 or higher
 
-## Pre-installation
-```bach
-sudo apt-get update && sudo apt-get install build-essential
-```
 
-## Setup
+## Installation
 
 Follow the instructions below to set up your environment for using the QPlayer Wrapper.
 
@@ -33,21 +32,32 @@ git clone https://github.com/eQuantumOS/QPlayer.git
 git clone https://github.com/pybind/pybind11.git
 ```
 
+## Install (pip package-management system)
+```bash
+apt update & apt install pip
+```
+
 ### Install QPlayer Wrapper
 ```bach
 cd QPlayer-Wrapper
-make
+pip install -r requirements.txt
+pip install .
 ```
 
 ## Usage
 
+### Test
+```python
+python3 -m unittest
+```
+
 ### Run main.py
 
 ```bash
-python main.py
+python3 main.py
 ```
 
-### Test code (main.py)
+### Sample code (main.py)
 ```python
 from qiskit import QuantumCircuit
 from qiskit.visualization import plot_histogram
